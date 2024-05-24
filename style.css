@@ -73,20 +73,25 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-back 0.2s;
  
 }
 .light #switch button{
-  right:0
-  left: initial;
+  animation: silde-in 0.4s forwards;
 }
 #switch span{
   display: block;
   width: 64px;
-  height: 32px;
+  height: 24px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
+}
+
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
+
 }
 
 /* links */
@@ -154,5 +159,22 @@ footer{
   }
   .light{
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/*animaçoes*/
+@keyframes slide-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+@keyframes silde-back{
+  from{
+    left:50%
+  }
+  to{
+    left: 0;
   }
 }
